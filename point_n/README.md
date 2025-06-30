@@ -74,4 +74,3 @@ Please indicate the splits at `--split` by `1,2,3` for OBJ-BG, OBJ-ONLY, and PB-
 ```
 
 ## Contact
-If you have any question about this project, please contact mrziehmohamadi@gmail.com
