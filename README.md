@@ -1,1 +1,1 @@
-# Point-N
+# NonParametricNet
