@@ -20,34 +20,30 @@ It introduces an **adaptive Gaussian–Fourier positional encoding** where kerne
 ## 📁 Repository Structure
 
 
-├── comparison
-│   ├── data
-│   ├── NPNet
-│   ├── Point\_GN
-│   ├── Pointnet\_Pointnet2
-│   ├── Point\_NN
-│   ├── scripts
-│   └── tasks
-│
-├── data
-├── datasets
-│   ├── h5\_files
-│   │   ├── main\_split
-│   │   ├── main\_split\_nobg
-│   ├── modelnet40\_ply\_hdf5\_2048
-│   ├── modelnet\_fewshot
-│   │   ├── 10way\_10shot
-│   │   ├── 10way\_20shot
-│   │   ├── 5way\_10shot
-│   │   └── 5way\_20shot
-│   ├── modelnetR\_ply\_hdf5\_2048
-│   └── shapenetcore\_partanno\_segmentation\_benchmark\_v0\_normal
-│       ├── train\_test\_split
-│       └── util
-│
-├── models
-├── run.sh
-└── run\_comparison.sh
+├── comparison/
+│   ├── .../
+│   ├── scripts/
+│   └── tasks/
+│/
+├── data/
+├── datasets/
+│   ├── h5\_files/
+│   │   ├── main\_split/
+│   │   ├── main\_split\_nobg/
+│   ├── modelnet40\_ply\_hdf5\_2048/
+│   ├── modelnet\_fewshot/
+│   │   ├── 10way\_10shot/
+│   │   ├── 10way\_20shot/
+│   │   ├── 5way\_10shot/
+│   │   └── 5way\_20shot/
+│   ├── modelnetR\_ply\_hdf5\_2048/
+│   └── shapenetcore\_partanno\_segmentation\_benchmark\_v0\_normal/
+│       ├── train\_test\_split/
+│       └── util/
+│/
+├── models/
+├── run.sh/
+└── run\_comparison.sh/
 
 
 
@@ -92,6 +88,12 @@ bash run.sh
 
 ```bash
 python train_np_cls_mn.py --dataset modelnet40       # acc: 85.45
+python train_np_cls_mn.py --dataset modelnet-R       # acc: 85.65
+```
+
+### Classification - ModelNet-R
+
+```bash
 python train_np_cls_mn.py --dataset modelnet-R       # acc: 85.65
 ```
 
@@ -148,5 +150,6 @@ bash scripts/run.sh
 * [PointNet++](https://arxiv.org/abs/1706.02413)
 * [Point-NN](https://arxiv.org/abs/2303.08134)
 * [Point-GN](https://arxiv.org/abs/2003.01251)
+
 
 
