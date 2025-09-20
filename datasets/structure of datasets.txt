@@ -1,0 +1,16 @@
+📦 Supported Datasets
+├── datasets
+│   ├── h5_files
+│   │   ├── main_split
+│   │   ├── main_split_nobg
+│   ├── modelnet40_ply_hdf5_2048
+│   ├── modelnet_fewshot
+│   │   ├── 10way_10shot
+│   │   ├── 10way_20shot
+│   │   ├── 5way_10shot
+│   │   └── 5way_20shot
+│   ├── modelnetR_ply_hdf5_2048
+│   └── shapenetcore_partanno_segmentation_benchmark_v0_normal
+│       ├── ...
+│       ├── train_test_split
+│       └── util
