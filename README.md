@@ -23,7 +23,6 @@ It introduces an **adaptive Gaussian–Fourier positional encoding** where kerne
 │   ├── .../
 │   ├── scripts/
 │   └── tasks/
-│       └── data/
 ├── data/
 ├── datasets/
 │   ├── h5_files/
@@ -149,6 +148,7 @@ bash scripts/run.sh
 * [PointNet++](https://arxiv.org/abs/1706.02413)
 * [Point-NN](https://arxiv.org/abs/2303.08134)
 * [Point-GN](https://arxiv.org/abs/2003.01251)
+
 
 
 
