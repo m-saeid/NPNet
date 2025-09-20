@@ -19,31 +19,30 @@ It introduces an **adaptive Gaussian–Fourier positional encoding** where kerne
 
 ## 📁 Repository Structure
 
-
 ├── comparison/
 │   ├── .../
 │   ├── scripts/
 │   └── tasks/
-│/
+│       └── data/
 ├── data/
 ├── datasets/
-│   ├── h5\_files/
-│   │   ├── main\_split/
-│   │   ├── main\_split\_nobg/
-│   ├── modelnet40\_ply\_hdf5\_2048/
-│   ├── modelnet\_fewshot/
-│   │   ├── 10way\_10shot/
-│   │   ├── 10way\_20shot/
-│   │   ├── 5way\_10shot/
-│   │   └── 5way\_20shot/
-│   ├── modelnetR\_ply\_hdf5\_2048/
-│   └── shapenetcore\_partanno\_segmentation\_benchmark\_v0\_normal/
-│       ├── train\_test\_split/
+│   ├── h5_files/
+│   │   ├── main_split/
+│   │   └── main_split_nobg/
+│   ├── modelnet40_ply_hdf5_2048/
+│   ├── modelnet_fewshot/
+│   │   ├── 10way_10shot/
+│   │   ├── 10way_20shot/
+│   │   ├── 5way_10shot/
+│   │   └── 5way_20shot/
+│   ├── modelnetR_ply_hdf5_2048/
+│   └── shapenetcore_partanno_segmentation_benchmark_v0_normal/
+│       ├── train_test_split/
 │       └── util/
-│/
 ├── models/
-├── run.sh/
-└── run\_comparison.sh/
+├── run.sh
+└── run_comparison.sh
+
 
 
 
@@ -150,6 +149,7 @@ bash scripts/run.sh
 * [PointNet++](https://arxiv.org/abs/1706.02413)
 * [Point-NN](https://arxiv.org/abs/2303.08134)
 * [Point-GN](https://arxiv.org/abs/2003.01251)
+
 
 
 
