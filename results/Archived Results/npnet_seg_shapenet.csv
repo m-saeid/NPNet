@@ -1,0 +1,2 @@
+dataset,miou,iou,Inference_Time,GFLOPs,Mem_MB,encoder_type,bz,points,stages,dim,k,de_k,alpha,beta,sigma,baseline,scaling,eps,adaptive_ratio,gamma,seed,log_file_path
+shapenetpart,73.55817528626261,,-,-,-,seg,1,1024,2,144,70,6,1000,100,0.6729,0.1,10.0,1e-06,0.5,300,26,results/logs/segmentation/shapenetpart/log_2025-09-20_02-02-54.txt

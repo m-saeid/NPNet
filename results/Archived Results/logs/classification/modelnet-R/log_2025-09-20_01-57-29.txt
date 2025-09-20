@@ -1,0 +1,8 @@
+Classification Log - modelnet-R
+Model: npnet
+Accuracy (cos): 85.65040230751038
+Accuracy (1-NN): 84.39024090766907
+Total Time: 72.36s
+Train Time: 33.92s
+Test Time: 8.51s
+Args: {'model': 'npnet', 'task': 'cls', 'dataset': 'modelnet-R', 'batch_size': 10, 'num_points': 1024, 'stages': 4, 'k': 110, 'init_dim': 35, 'stage_dim': 35, 'baseline': 0.1, 'scaling': 10.0, 'eps': 1e-06, 'n_way': 10, 'k_shots': 20, 'evaluation': False, 'fixed_sigma': None, 'fixed_blend': None, 'feat_normalize': True, 'sigma': 0.274, 'seed': 42, 'csv_file': './eval/npnet_cls_modelnet-R_nTrue.csv'}

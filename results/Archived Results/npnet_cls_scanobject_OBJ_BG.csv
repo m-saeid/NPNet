@@ -1,0 +1,2 @@
+dataset,acc_cos,acc_1nn,seed,k,sigma,init_dim,stage_dim,stages,total_time,train_time,test_time,gamma
+scanobject,86.11111044883728,84.375,42,120,0.137,27,27,4,9.547868967056274,6.486624479293823,1.6227762699127197,1206.0

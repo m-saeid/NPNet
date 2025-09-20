@@ -1,0 +1,8 @@
+Classification Log - modelnet40fewshot
+Model: npnet
+Accuracy (cos): 91.99999868869781
+Accuracy (1-NN): 90.39999783039093
+Total Time: 9.47s
+Train Time: 0.26s
+Test Time: 0.41s
+Args: {'model': 'npnet', 'task': 'cls', 'dataset': 'modelnet40fewshot', 'batch_size': 10, 'num_points': 1024, 'stages': 4, 'k': 110, 'init_dim': 35, 'stage_dim': 35, 'baseline': 0.1, 'scaling': 10.0, 'eps': 1e-06, 'n_way': 5, 'k_shots': 10, 'evaluation': False, 'fixed_sigma': None, 'fixed_blend': None, 'feat_normalize': True, 'sigma': 0.282, 'seed': 852, 'csv_file': './eval/npnet_cls_modelnet40fewshot_nTrue_n5_k10.csv'}
