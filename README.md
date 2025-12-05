@@ -1,13 +1,7 @@
 
-# NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding
+# A Non-Parametric Network
 
-Official implementation of the paper:  
-**“NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding for 3D Classification and Segmentation”**  
-
----
-
-## 🧠 Overview
-NPNet is a fully non-parametric network for 3D point cloud analysis.  
+This repository contains an implementation of a non-parametric network for 3D point cloud analysis.
 It introduces an **adaptive Gaussian–Fourier positional encoding** where kernel width and blending weights are dynamically set from input geometry, ensuring robustness across varying scales and densities.  
 
 - 🚫 **No trainable parameters**  
@@ -15,6 +9,10 @@ It introduces an **adaptive Gaussian–Fourier positional encoding** where kerne
 - 💾 **Low memory footprint and fast inference**  
 - 📊 **State-of-the-art among non-parametric methods** on ModelNet40, ModelNet-R, ScanObjectNN, ShapeNetPart, and few-shot ModelNet40.  
 
+## 🧠 Overview
+Our Non-Parametric Network processes point clouds using geometry-driven kernels instead of learned weights.
+Its adaptive positional encoding provides stable behavior across point densities, shapes, and scales.
+This codebase includes experiments for classification, segmentation, few-shot learning, and efficiency comparisons.
 ---
 
 ## 📁 Repository Structure
@@ -59,8 +57,8 @@ It introduces an **adaptive Gaussian–Fourier positional encoding** where kerne
 ## 🛠️ Installation
 ```bash
 # Clone the repo
-git clone https://github.com/anonymous/NPNet.git
-cd NPNet
+git clone https://github.com/anonymous/Non-Parametric-3D.git
+cd Non-Parametric-3D
 
 # Install dependencies
 pip install torch torchvision
@@ -122,7 +120,7 @@ python train_np_seg.py --dataset shapenetpart    # acc: 73.5
 
 ## ⚡ Efficiency Comparison
 
-NPNet achieves lower FLOPs, reduced GPU memory usage, and faster inference compared with other non-parametric baselines.  
+Our model achieves lower FLOPs, reduced GPU memory usage, and faster inference compared with other non-parametric baselines.  
 
 To reproduce efficiency profiling:  
 ```bash
@@ -135,10 +133,10 @@ bash scripts/run.sh
 
 | Model    | Dataset  | GFLOPs | GPU Mem. (MB) | Params (M) | Inference (ms) | Points |
 | -------- | -------- | ------ | ------------- | ---------- | -------------- | ------ |
-| NPNet    | ModelNet | 0.0021 | 99.1          | 0          | 3.86           | 1024   |
+| Our      | ModelNet | 0.0021 | 99.1          | 0          | 3.86           | 1024   |
 | Point-NN | ModelNet | 0.0027 | 161.0         | 0          | 4.44           | 1024   |
 | Point-GN | ModelNet | 0.0021 | 161.0         | 0          | 5.80           | 1024   |
-| NPNet    | ShapeNet | 0.0045 | 256.4         | 0          | 5.63           | 1024   |
+| Our      | ShapeNet | 0.0045 | 256.4         | 0          | 5.63           | 1024   |
 | Point-NN | ShapeNet | 0.0054 | 442.9         | 0          | 16.83          | 1024   |
 
 ---
@@ -148,6 +146,7 @@ bash scripts/run.sh
 * [PointNet++](https://arxiv.org/abs/1706.02413)
 * [Point-NN](https://arxiv.org/abs/2303.08134)
 * [Point-GN](https://arxiv.org/abs/2003.01251)
+
 
 
 
