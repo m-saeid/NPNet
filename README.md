@@ -10,9 +10,11 @@ It introduces an **adaptive Gaussian–Fourier positional encoding** where kerne
 - 📊 **State-of-the-art among non-parametric methods** on ModelNet40, ModelNet-R, ScanObjectNN, ShapeNetPart, and few-shot ModelNet40.  
 
 ## 🧠 Overview
+
 Our Non-Parametric Network processes point clouds using geometry-driven kernels instead of learned weights.
 Its adaptive positional encoding provides stable behavior across point densities, shapes, and scales.
 This codebase includes experiments for classification, segmentation, few-shot learning, and efficiency comparisons.
+
 ---
 
 ## 📁 Repository Structure
@@ -146,6 +148,7 @@ bash scripts/run.sh
 * [PointNet++](https://arxiv.org/abs/1706.02413)
 * [Point-NN](https://arxiv.org/abs/2303.08134)
 * [Point-GN](https://arxiv.org/abs/2003.01251)
+
 
 
 
