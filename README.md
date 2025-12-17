@@ -86,7 +86,6 @@ bash run.sh
 
 ```bash
 python train_np_cls_mn.py --dataset modelnet40       # acc: 85.45
-python train_np_cls_mn.py --dataset modelnet-R       # acc: 85.65
 ```
 
 ### Classification - ModelNet-R
@@ -148,6 +147,7 @@ bash scripts/run.sh
 * [PointNet++](https://arxiv.org/abs/1706.02413)
 * [Point-NN](https://arxiv.org/abs/2303.08134)
 * [Point-GN](https://arxiv.org/abs/2003.01251)
+
 
 
 
