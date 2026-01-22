@@ -1,7 +1,7 @@
 
-# A Non-Parametric Network
+# NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding for 3D Classification and Segmentation
 
-This repository contains an implementation of a non-parametric network for 3D point cloud analysis.
+This repository contains implementation of the paper "NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding for 3D Classification and Segmentation".
 It introduces an **adaptive Gaussian–Fourier positional encoding** where kernel width and blending weights are dynamically set from input geometry, ensuring robustness across varying scales and densities.  
 
 - 🚫 **No trainable parameters**  
@@ -147,6 +147,7 @@ bash scripts/run.sh
 * [PointNet++](https://arxiv.org/abs/1706.02413)
 * [Point-NN](https://arxiv.org/abs/2303.08134)
 * [Point-GN](https://arxiv.org/abs/2003.01251)
+
 
 
 
