@@ -70,6 +70,12 @@ cd NPNet
 pip install torch torchvision
 pip install -r requirements.txt
 
+# Install gcc-10 g++-10
+sudo apt update
+sudo apt install gcc-10 g++-10
+export CC=gcc-10
+export CXX=g++-10
+
 # Compile PointNet++ ops
 cd pointnet2_ops_lib
 pip install .
@@ -156,6 +162,7 @@ bash scripts/run_ablation.sh
 * [PointNet++](https://arxiv.org/abs/1706.02413)
 * [Point-NN](https://arxiv.org/abs/2303.08134)
 * [Point-GN](https://arxiv.org/abs/2003.01251)
+
 
 
 
