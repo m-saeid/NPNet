@@ -141,7 +141,7 @@ bash scripts/run.sh
 
 ---
 
-📊 Ablation Study
+## 📊 Ablation Study
 
 To reproduce Ablation Study:  
 ```bash
@@ -149,12 +149,14 @@ cd comparison
 bash scripts/run_ablation.sh
 ```
 
+---
 
 ## 🙌 Acknowledgements
 
 * [PointNet++](https://arxiv.org/abs/1706.02413)
 * [Point-NN](https://arxiv.org/abs/2303.08134)
 * [Point-GN](https://arxiv.org/abs/2003.01251)
+
 
 
 
