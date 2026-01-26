@@ -63,7 +63,7 @@ It introduces an **adaptive Gaussian–Fourier positional encoding** where kerne
 ## 🛠️ Installation
 ```bash
 # Clone the repo
-git clone https://github.com/anonymous/NPNet.git
+git clone https://github.com/m-saeid/NPNet.git
 cd NPNet
 
 # Install dependencies
@@ -146,6 +146,7 @@ bash scripts/run.sh
 * [PointNet++](https://arxiv.org/abs/1706.02413)
 * [Point-NN](https://arxiv.org/abs/2303.08134)
 * [Point-GN](https://arxiv.org/abs/2003.01251)
+
 
 
 
