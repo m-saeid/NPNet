@@ -1,7 +1,13 @@
+```markdown
+# NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding
 
-# NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding for 3D Classification and Segmentation
+Official implementation of the paper:  
+**“NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding for 3D Classification and Segmentation”**  
 
-This repository contains implementation of the paper "NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding for 3D Classification and Segmentation".
+---
+
+## 🧠 Overview
+NPNet is a fully non-parametric network for 3D point cloud analysis.  
 It introduces an **adaptive Gaussian–Fourier positional encoding** where kernel width and blending weights are dynamically set from input geometry, ensuring robustness across varying scales and densities.  
 
 - 🚫 **No trainable parameters**  
@@ -9,41 +15,41 @@ It introduces an **adaptive Gaussian–Fourier positional encoding** where kerne
 - 💾 **Low memory footprint and fast inference**  
 - 📊 **State-of-the-art among non-parametric methods** on ModelNet40, ModelNet-R, ScanObjectNN, ShapeNetPart, and few-shot ModelNet40.  
 
-## 🧠 Overview
-
-Our Non-Parametric Network processes point clouds using geometry-driven kernels instead of learned weights.
-Its adaptive positional encoding provides stable behavior across point densities, shapes, and scales.
-This codebase includes experiments for classification, segmentation, few-shot learning, and efficiency comparisons.
-
 ---
 
 ## 📁 Repository Structure
 ```
-├── comparison/
-│   ├── .../
-│   ├── scripts/
-│   └── tasks/
-├── data/
-├── datasets/
-│   ├── h5_files/
-│   │   ├── main_split/
-│   │   └── main_split_nobg/
-│   ├── modelnet40_ply_hdf5_2048/
-│   ├── modelnet_fewshot/
-│   │   ├── 10way_10shot/
-│   │   ├── 10way_20shot/
-│   │   ├── 5way_10shot/
-│   │   └── 5way_20shot/
-│   ├── modelnetR_ply_hdf5_2048/
-│   └── shapenetcore_partanno_segmentation_benchmark_v0_normal/
-│       ├── train_test_split/
-│       └── util/
-├── models/
+
+├── comparison
+│   ├── data
+│   ├── NPNet
+│   ├── Point\_GN
+│   ├── Pointnet\_Pointnet2
+│   ├── Point\_NN
+│   ├── scripts
+│   └── tasks
+│
+├── data
+├── datasets
+│   ├── h5\_files
+│   │   ├── main\_split
+│   │   ├── main\_split\_nobg
+│   ├── modelnet40\_ply\_hdf5\_2048
+│   ├── modelnet\_fewshot
+│   │   ├── 10way\_10shot
+│   │   ├── 10way\_20shot
+│   │   ├── 5way\_10shot
+│   │   └── 5way\_20shot
+│   ├── modelnetR\_ply\_hdf5\_2048
+│   └── shapenetcore\_partanno\_segmentation\_benchmark\_v0\_normal
+│       ├── train\_test\_split
+│       └── util
+│
+├── models
 ├── run.sh
-└── run_comparison.sh
-```
+└── run\_comparison.sh
 
-
+````
 
 ---
 
@@ -59,8 +65,8 @@ This codebase includes experiments for classification, segmentation, few-shot le
 ## 🛠️ Installation
 ```bash
 # Clone the repo
-git clone https://github.com/anonymous/Non-Parametric-3D.git
-cd Non-Parametric-3D
+git clone https://github.com/anonymous/NPNet.git
+cd NPNet
 
 # Install dependencies
 pip install torch torchvision
@@ -86,11 +92,6 @@ bash run.sh
 
 ```bash
 python train_np_cls_mn.py --dataset modelnet40       # acc: 85.45
-```
-
-### Classification - ModelNet-R
-
-```bash
 python train_np_cls_mn.py --dataset modelnet-R       # acc: 85.65
 ```
 
@@ -99,8 +100,8 @@ python train_np_cls_mn.py --dataset modelnet-R       # acc: 85.65
 ```bash
 python train_np_cls_mn.py --dataset modelnet40fewshot --n_way 5 --k_shots 10   # acc: 92.0
 python train_np_cls_mn.py --dataset modelnet40fewshot --n_way 5 --k_shots 20   # acc: 93.2
-python train_np_cls_mn.py --dataset modelnet40fewshot --n_way 10 --k_shots 10  # acc: 82.45
-python train_np_cls_mn.py --dataset modelnet40fewshot --n_way 10 --k_shots 20  # acc: 87.55
+python train_np_cls_mn.py --dataset modelnet40fewshot --n_way 10 --k_shots 10  # acc: 82.5
+python train_np_cls_mn.py --dataset modelnet40fewshot --n_way 10 --k_shots 20  # acc: 87.6
 ```
 
 ### Classification - ScanObjectNN
@@ -121,7 +122,7 @@ python train_np_seg.py --dataset shapenetpart    # acc: 73.5
 
 ## ⚡ Efficiency Comparison
 
-Our model achieves lower FLOPs, reduced GPU memory usage, and faster inference compared with other non-parametric baselines.  
+NPNet achieves lower FLOPs, reduced GPU memory usage, and faster inference compared with other non-parametric baselines.  
 
 To reproduce efficiency profiling:  
 ```bash
@@ -134,10 +135,10 @@ bash scripts/run.sh
 
 | Model    | Dataset  | GFLOPs | GPU Mem. (MB) | Params (M) | Inference (ms) | Points |
 | -------- | -------- | ------ | ------------- | ---------- | -------------- | ------ |
-| Our      | ModelNet | 0.0021 | 99.1          | 0          | 3.86           | 1024   |
+| NPNet    | ModelNet | 0.0021 | 99.1          | 0          | 3.86           | 1024   |
 | Point-NN | ModelNet | 0.0027 | 161.0         | 0          | 4.44           | 1024   |
 | Point-GN | ModelNet | 0.0021 | 161.0         | 0          | 5.80           | 1024   |
-| Our      | ShapeNet | 0.0045 | 256.4         | 0          | 5.63           | 1024   |
+| NPNet    | ShapeNet | 0.0045 | 256.4         | 0          | 5.63           | 1024   |
 | Point-NN | ShapeNet | 0.0054 | 442.9         | 0          | 16.83          | 1024   |
 
 ---
@@ -147,13 +148,4 @@ bash scripts/run.sh
 * [PointNet++](https://arxiv.org/abs/1706.02413)
 * [Point-NN](https://arxiv.org/abs/2303.08134)
 * [Point-GN](https://arxiv.org/abs/2003.01251)
-
-
-
-
-
-
-
-
-
 
