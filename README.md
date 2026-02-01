@@ -1,4 +1,4 @@
-# NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding
+# NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding for 3D Classification and Segmentation
 
 Official implementation of the paper:  
 **“NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding for 3D Classification and Segmentation”**  
@@ -162,6 +162,7 @@ bash scripts/run_ablation.sh
 * [PointNet++](https://arxiv.org/abs/1706.02413)
 * [Point-NN](https://arxiv.org/abs/2303.08134)
 * [Point-GN](https://arxiv.org/abs/2003.01251)
+
 
 
 
