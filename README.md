@@ -1,7 +1,9 @@
-# NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding for 3D Classification and Segmentation
+# 🚀 NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding for 3D Classification and Segmentation
 
-Official implementation of the paper:  
+**Official implementation** of the IEEE IV 2026 paper:  
 **“NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding for 3D Classification and Segmentation”**  
+by Mohammad Saeid, Amir Salarpour, Pedram MohajerAnsari, Mert D. Pesé
+📄 [View Paper](https://arxiv.org/abs/2602.00542)
 
 ---
 
@@ -9,10 +11,10 @@ Official implementation of the paper:
 NPNet is a fully non-parametric network for 3D point cloud analysis.  
 It introduces an **adaptive Gaussian–Fourier positional encoding** where kernel width and blending weights are dynamically set from input geometry, ensuring robustness across varying scales and densities.  
 
+- 📊 **State-of-the-art among non-parametric methods** on ModelNet40, ModelNet-R, ScanObjectNN, ShapeNetPart, and few-shot ModelNet40.  
 - 🚫 **No trainable parameters**  
 - ⚡ **Competitive classification and segmentation performance**  
 - 💾 **Low memory footprint and fast inference**  
-- 📊 **State-of-the-art among non-parametric methods** on ModelNet40, ModelNet-R, ScanObjectNN, ShapeNetPart, and few-shot ModelNet40.  
 
 ---
 
@@ -30,23 +32,13 @@ It introduces an **adaptive Gaussian–Fourier positional encoding** where kerne
 │
 ├── data
 ├── datasets
-│   ├── h5\_files
-│   │   ├── main\_split
-│   │   ├── main\_split\_nobg
-│   ├── modelnet40\_ply\_hdf5\_2048
-│   ├── modelnet\_fewshot
-│   │   ├── 10way\_10shot
-│   │   ├── 10way\_20shot
-│   │   ├── 5way\_10shot
-│   │   └── 5way\_20shot
-│   ├── modelnetR\_ply\_hdf5\_2048
-│   └── shapenetcore\_partanno\_segmentation\_benchmark\_v0\_normal
-│       ├── train\_test\_split
-│       └── util
-│
 ├── models
+├── ...
 ├── run.sh
-└── run\_comparison.sh
+├── train_np_cls_mn.py
+├── train_np_cls_scan.py
+├── train_np_seg.py
+└── ...
 ```
 
 ---
@@ -60,27 +52,68 @@ It introduces an **adaptive Gaussian–Fourier positional encoding** where kerne
 
 ---
 
+## 📦 Dataset Preparation
+
+**Download Datasets** and place them under `dataset/` with the following folder structure:
+   ```bash
+    ├── datasets
+    │   ├── h5\_files
+    │   │   ├── main\_split
+    │   │   ├── main\_split\_nobg
+    │   ├── modelnet40\_ply\_hdf5\_2048
+    │   ├── modelnet\_fewshot
+    │   │   ├── 10way\_10shot
+    │   │   ├── 10way\_20shot
+    │   │   ├── 5way\_10shot
+    │   │   └── 5way\_20shot
+    │   ├── modelnetR\_ply\_hdf5\_2048
+    │   └── shapenetcore\_partanno\_segmentation\_benchmark\_v0\_normal
+    │       ├── train\_test\_split
+    │       └── util
+   ```
+
+---
+
 ## 🛠️ Installation
-```bash
-# Clone the repo
-git clone https://github.com/m-saeid/NPNet.git
-cd NPNet
 
-# Install dependencies
-pip install torch torchvision
-pip install -r requirements.txt
+1. **Clone this repository**
+    ```bash
+    git clone https://github.com/m-saeid/NPNet.git
+    cd NPNet
+    ```
+    
+2. **Install Python dependencies**
+   ```bash
+   pip install torch torchvision
+   pip install -r requirements.txt
+   ```
+   
+3. **Install `gcc-10 g++-10`**
+   ```bash
+   sudo apt update
+   sudo apt install gcc-10 g++-10
+   
+   export CC=gcc-10
+   export CXX=g++-10
+   ```
 
-# Install gcc-10 g++-10
-sudo apt update
-sudo apt install gcc-10 g++-10
-export CC=gcc-10
-export CXX=g++-10
+4. **Install `pointnet2_ops_lib`**
 
-# Compile PointNet++ ops
-cd pointnet2_ops_lib
-pip install .
-cd ..
-````
+   ```bash
+   cd pointnet2_ops_lib
+   pip install .
+   cd ..
+   ```
+
+5. **Verify CUDA & GPU setup**
+
+   * Ensure CUDA 11.x or 12.x is installed and matches your GPU drivers.
+   * Confirm with:
+
+     ```bash
+     nvidia-smi
+     nvcc --version
+     ```
 
 ---
 
@@ -121,6 +154,23 @@ python train_np_cls_scan.py --split PB_T50_RS    # acc: 84.9
 ```bash
 python train_np_seg.py --dataset shapenetpart    # acc: 73.5
 ```
+---
+## 📊 Results
+| Dataset                | Accuracy | Parameters |
+| ------------           | -------: | ---------- |
+|Classification|
+| ModelNet40              |    85.45% | 0          |
+| ModelNet-R              |    85.65% | 0          |
+| ScanObjectNN OBJ_BG    |    86.1% | 0          |
+| ScanObjectNN OBJ_ONLY  |    86.1% | 0          |
+| ScanObjectNN PB_T50_RS |    84.9% | 0          |
+|Few-Shot Classification|
+| ModelNet40 5-way 10-shots              |    92.0% | 0          |
+| ModelNet40 5-way 20-shots              |    93.2% | 0          |
+| ModelNet40 10-way 10-shots             |    82.5% | 0          |
+| ModelNet40 10-way 20-shots             |    87.6% | 0          |
+|Segmentation - ShapeNet|
+| ModelNet40              |    73.5% | 0          |
 
 ---
 
@@ -157,11 +207,33 @@ bash scripts/run_ablation.sh
 
 ---
 
+
+
+## 📝 Citation
+
+```bibtex
+@article{saeid2026npnet,
+  title={NPNet: A Non-Parametric Network with Adaptive Gaussian-Fourier Positional Encoding for 3D Classification and Segmentation},
+  author={Saeid, Mohammad and Salarpour, Amir and MohajerAnsari, Pedram and Pes{\'e}, Mert D},
+  journal={arXiv preprint arXiv:2602.00542},
+  year={2026}
+}
+```
+
+---
+
+## 📬 Contact
+
+📧 Questions? Reach out to: **[imm.saeid@gmail.com](imm.saeid@gmail.com)**
+
+---
+
 ## 🙌 Acknowledgements
 
 * [PointNet++](https://arxiv.org/abs/1706.02413)
 * [Point-NN](https://arxiv.org/abs/2303.08134)
 * [Point-GN](https://arxiv.org/abs/2003.01251)
+
 
 
 
