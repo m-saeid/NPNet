@@ -2,18 +2,18 @@
 
 **Official implementation** of the IEEE IV 2026 paper:  
 **“NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding for 3D Classification and Segmentation”**  
-by Mohammad Saeid, Amir Salarpour, Pedram MohajerAnsari, Mert D. Pesé
+by Mohammad Saeid, Amir Salarpour, Pedram MohajerAnsari, Mert D. Pesé.
+
 📄 [View Paper](https://arxiv.org/abs/2602.00542)
 
 ---
 
-## 🧠 Overview
 NPNet is a fully non-parametric network for 3D point cloud analysis.  
 It introduces an **adaptive Gaussian–Fourier positional encoding** where kernel width and blending weights are dynamically set from input geometry, ensuring robustness across varying scales and densities.  
 
-- 📊 **State-of-the-art among non-parametric methods** on ModelNet40, ModelNet-R, ScanObjectNN, ShapeNetPart, and few-shot ModelNet40.  
+- 🏆 **State-of-the-art non-parametric method** on ModelNet40, ModelNet-R, ScanObjectNN, ShapeNetPart, and few-shot ModelNet40  
 - 🚫 **No trainable parameters**  
-- ⚡ **Competitive classification and segmentation performance**  
+- ⚡ **Competitive classification and segmentation performance** 
 - 💾 **Low memory footprint and fast inference**  
 
 ---
@@ -233,6 +233,7 @@ bash scripts/run_ablation.sh
 * [PointNet++](https://arxiv.org/abs/1706.02413)
 * [Point-NN](https://arxiv.org/abs/2303.08134)
 * [Point-GN](https://arxiv.org/abs/2003.01251)
+
 
 
 
