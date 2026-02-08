@@ -154,23 +154,35 @@ python train_np_cls_scan.py --split PB_T50_RS    # acc: 84.9
 ```bash
 python train_np_seg.py --dataset shapenetpart    # acc: 73.5
 ```
+
 ---
 ## 📊 Results
-| Dataset                | Accuracy | Parameters |
-| ------------           | -------: | ---------- |
-|Classification|
-| ModelNet40              |    85.45% | 0          |
-| ModelNet-R              |    85.65% | 0          |
-| ScanObjectNN OBJ_BG    |    86.1% | 0          |
-| ScanObjectNN OBJ_ONLY  |    86.1% | 0          |
-| ScanObjectNN PB_T50_RS |    84.9% | 0          |
-|Few-Shot Classification|
-| ModelNet40 5-way 10-shots              |    92.0% | 0          |
-| ModelNet40 5-way 20-shots              |    93.2% | 0          |
-| ModelNet40 10-way 10-shots             |    82.5% | 0          |
-| ModelNet40 10-way 20-shots             |    87.6% | 0          |
-|Segmentation - ShapeNet|
-| ModelNet40              |    73.5% | 0          |
+
+### 🧠 Classification
+
+| Dataset | Accuracy | Parameters |
+|--------|---------:|-----------:|
+| ModelNet40 | 85.45% | 0 |
+| ModelNet-R | 85.65% | 0 |
+| ScanObjectNN OBJ_BG | 86.1% | 0 |
+| ScanObjectNN OBJ_ONLY | 86.1% | 0 |
+| ScanObjectNN PB_T50_RS | 84.9% | 0 |
+
+### 🎯 Few-Shot Classification
+
+| Dataset | Accuracy | Parameters |
+|--------|---------:|-----------:|
+| ModelNet40 5-way 10-shot | 92.0% | 0 |
+| ModelNet40 5-way 20-shot | 93.2% | 0 |
+| ModelNet40 10-way 10-shot | 82.5% | 0 |
+| ModelNet40 10-way 20-shot | 87.6% | 0 |
+
+### ✂️ Segmentation (ShapeNet)
+
+| Dataset | mIoU | Parameters |
+|--------|-----:|-----------:|
+| ShapeNetPart | 73.5% | 0 |
+
 
 ---
 
@@ -233,6 +245,7 @@ bash scripts/run_ablation.sh
 * [PointNet++](https://arxiv.org/abs/1706.02413)
 * [Point-NN](https://arxiv.org/abs/2303.08134)
 * [Point-GN](https://arxiv.org/abs/2003.01251)
+
 
 
 
