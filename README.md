@@ -4,7 +4,31 @@
 **“NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding for 3D Classification and Segmentation”**  
 by Mohammad Saeid, Amir Salarpour, Pedram MohajerAnsari, Mert D. Pesé.
 
-📄 [View Paper](https://arxiv.org/abs/2602.00542)
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2602.00542">
+    <img src="https://img.shields.io/badge/Paper-arXiv-brightgreen" alt="Paper"/> <!-- on arXiv"/> -->
+  </a>
+  <a href="https://m-saeid.github.io/NPNet">
+    <img src="https://img.shields.io/badge/Project-Homepage-red" alt="Project Homepage"/>
+  </a>
+</p>
+  <!--
+  <a href="https://www.youtube.com/watch?v=7ziipjpdth0&list=PLvWl5fdJgzQxaF0v4egv1cdrstl8N7fEM&index=2">
+    <img src="https://img.shields.io/badge/Video-Presentation-blue" alt="YouTube Presentation"/>
+  </a>
+    <a href="https://github.com/m-saeid/ModeNetR_PointSkipNet/blob/main/images/ModelNet%E2%80%91R%20%26%20Point%E2%80%91SkipNet.pdf" target="_blank">
+      <img src="https://img.shields.io/badge/Presentation-PDF-orange" alt="Presentation PDF"/>
+    </a>
+  -->
+  <!--
+  <a href="https://pytorch.org/">
+    <img src="https://img.shields.io/badge/Framework-PyTorch-orange" alt="PyTorch Framework"/>
+  </a>
+  <a href="https://github.com/m-saeid/ModeNetR_PointSkipNet/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="Apache 2.0 License"/>
+  </a>
+  -->
 
 ---
 
@@ -245,6 +269,7 @@ bash scripts/run_ablation.sh
 * [PointNet++](https://arxiv.org/abs/1706.02413)
 * [Point-NN](https://arxiv.org/abs/2303.08134)
 * [Point-GN](https://arxiv.org/abs/2003.01251)
+
 
 
 
