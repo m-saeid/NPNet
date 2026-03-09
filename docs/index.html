@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NPNet: A Non-Parametric Network</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    body { font-family: 'Noto Sans', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Google Sans', sans-serif; }
+    .hero-body { padding: 3rem 1.5rem; }
+    .publication-title { font-size: 2.2rem; font-weight: bold; margin-bottom: 1.5rem; }
+    .author-block { margin-right: 1.5rem; display: inline-block; font-size: 1.2rem; }
+    .conference-name { font-size: 1.5rem; color: #4a4a4a; margin-bottom: 1rem; }
+    .abstract-content { text-align: justify; margin-top: 1rem; }
+    .image-caption { text-align: center; font-size: 0.9rem; margin-top: 0.5rem; color: #666; margin-bottom: 2rem; }
+    .table { margin-left: auto; margin-right: auto; }
+    .code-block { background-color: #f5f5f5; padding: 1rem; border-radius: 5px; font-family: monospace; overflow-x: auto; }
+    .highlight-zero { color: #257942; font-weight: bold; background-color: #effaf3; padding: 0.2rem 0.5rem; border-radius: 3px;}
+  </style>
+</head>
+
+<body>
+
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h1 class="publication-title">NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding for 3D Classification and Segmentation</h1>
+      <h2 class="conference-name">Accepted at IEEE IV 2026</h2>
+      
+      <div class="is-size-5 publication-authors">
+        <span class="author-block">Mohammad Saeid,</span>
+        <span class="author-block">Amir Salarpour,</span>
+        <span class="author-block">Pedram MohajerAnsari,</span>
+        <span class="author-block">Mert D. Pesé</span>
+      </div>
+
+      <div class="column has-text-centered mt-4">
+        <div class="publication-links">
+          <span class="link-block">
+            <a href="https://arxiv.org/abs/2602.00542" target="_blank" class="button is-dark is-rounded is-outlined">
+              <span class="icon"><i class="fas fa-file-pdf"></i></span>
+              <span>arXiv Paper</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="https://github.com/m-saeid/NPNet" target="_blank" class="button is-dark is-rounded is-outlined">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>Code</span>
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content abstract-content">
+          <p>
+            NPNet is a fully non-parametric network for 3D point cloud analysis. It introduces an <b>adaptive Gaussian–Fourier positional encoding</b> where kernel width and blending weights are dynamically set from input geometry, ensuring robustness across varying scales and densities.
+          </p>
+          <p>
+            Remarkably, the model contains <span class="highlight-zero">zero trainable parameters</span>. Inference is performed purely by similarity matching to stored shape descriptors (classification) or part prototypes (segmentation). Despite this, it achieves competitive, state-of-the-art non-parametric performance on ModelNet40, ScanObjectNN, and ShapeNetPart, alongside an exceptionally low memory footprint and fast inference.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered mb-5">Methodology & Architecture</h2>
+        
+        <h3 class="title is-4">Overall Architecture</h3>
+        <img src="./images/NPNet Arch.PNG" alt="NPNet Architecture">
+        <p class="image-caption">NPNet architecture for classification and part segmentation. The model contains no trainable weights.</p>
+
+        <div class="columns mt-5">
+          <div class="column is-half">
+            <h3 class="title is-4">Stage Block</h3>
+            <img src="./images/Stages.PNG" alt="Stage Block">
+            <p class="image-caption">FPS selects centroids, k-NN groups local neighborhoods, positional encoding modulates features, and pooling produces a stage descriptor.</p>
+          </div>
+          <div class="column is-half">
+            <h3 class="title is-4">Adaptive Positional Encoding</h3>
+            <img src="./images/Adaptive Gaussian–Fourier positional encoding.PNG" alt="Adaptive Positional Encoding">
+            <p class="image-caption">Adapts bandwidth &sigma; and mixing coefficient &lambda; from input geometry; an additional Fourier branch provides global context.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered mb-5">Visualizations & Analysis</h2>
+        
+        <div class="columns is-vcentered">
+          <div class="column is-half">
+            <img src="./images/Qualitative Attention Visualization.PNG" alt="Qualitative Attention Visualization">
+            <p class="image-caption">Top: DGCNN attention. Middle/Bottom: activation maps from the proposed AdaptiveEmbedding module (dim 16 and 32).</p>
+          </div>
+          <div class="column is-half">
+            <img src="./images/Radar Plot.PNG" alt="Radar Plot Comparison">
+            <p class="image-caption">Radar comparison on ModelNet40 and ShapeNetPart. GPU memory, GFLOPs, and inference time are inverted (larger = better efficiency).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered mb-4">Efficiency & Benchmark Results</h2>
+        <p class="has-text-centered mb-5">Measured on an NVIDIA RTX 3090 (1024 points). NPNet achieves competitive accuracy with zero learned weights.</p>
+        
+        <div class="table-container">
+          <table class="table is-striped is-hoverable is-fullwidth">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Dataset</th>
+                <th>Accuracy</th>
+                <th>Params (M)</th>
+                <th>GFLOPs</th>
+                <th>GPU Mem (MB)</th>
+                <th>Time (ms)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>NPNet</b></td>
+                <td>ModelNet40</td>
+                <td>85.45%</td>
+                <td><span class="highlight-zero">0</span></td>
+                <td><b>0.0021</b></td>
+                <td><b>99.1</b></td>
+                <td><b>3.86</b></td>
+              </tr>
+              <tr>
+                <td>Point-NN</td>
+                <td>ModelNet40</td>
+                <td>-</td>
+                <td>0</td>
+                <td>0.0027</td>
+                <td>161.0</td>
+                <td>4.44</td>
+              </tr>
+              <tr>
+                <td>Point-GN</td>
+                <td>ModelNet40</td>
+                <td>-</td>
+                <td>0</td>
+                <td>0.0021</td>
+                <td>161.0</td>
+                <td>5.80</td>
+              </tr>
+              <tr>
+                <td><b>NPNet</b></td>
+                <td>ShapeNetPart</td>
+                <td>73.50%</td>
+                <td><span class="highlight-zero">0</span></td>
+                <td><b>0.0045</b></td>
+                <td><b>256.4</b></td>
+                <td><b>5.63</b></td>
+              </tr>
+              <tr>
+                <td>Point-NN</td>
+                <td>ShapeNetPart</td>
+                <td>-</td>
+                <td>0</td>
+                <td>0.0054</td>
+                <td>442.9</td>
+                <td>16.83</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Citation</h2>
+        <pre class="code-block"><code>@article{saeid2026npnet,
+  title={NPNet: A Non-Parametric Network with Adaptive Gaussian-Fourier Positional Encoding for 3D Classification and Segmentation},
+  author={Saeid, Mohammad and Salarpour, Amir and MohajerAnsari, Pedram and Pes{\'e}, Mert D},
+  journal={arXiv preprint arXiv:2602.00542},
+  year={2026}
+}</code></pre>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        For questions, contact <a href="mailto:imm.saeid@gmail.com">imm.saeid@gmail.com</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
