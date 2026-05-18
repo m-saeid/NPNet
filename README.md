@@ -4,6 +4,8 @@
 **“NPNet: A Non-Parametric Network with Adaptive Gaussian–Fourier Positional Encoding for 3D Classification and Segmentation”**  
 by Mohammad Saeid, Amir Salarpour, Pedram MohajerAnsari, Mert D. Pesé.
 
+🔥 Our paper has been accepted as an Oral Presentation at IEEE IV 2026!
+
 
 <p align="center">
   <a href="https://arxiv.org/abs/2602.00542">
